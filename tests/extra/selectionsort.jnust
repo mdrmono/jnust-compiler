@@ -1,0 +1,74 @@
+extern func print_string(string) void;
+extern func print_int(int) void;
+
+package SelectSort {
+  var nums [20]int;
+
+  func createList() void {
+    nums[0] = -4;
+    nums[1] = 6;
+    nums[2] = 3;
+    nums[3] = -1;
+    nums[4] = 1;
+    nums[5] = -10;
+    nums[6] = -8;
+    nums[7] = -3;
+    nums[8] = 3;
+    nums[9] = -3;
+    nums[10] = 1;
+    nums[11] = -10;
+    nums[12] = 5;
+    nums[13] = -9;
+    nums[14] = -9;
+    nums[15] = 2;
+    nums[16] = 5;
+    nums[17] = 9;
+    nums[18] = 1;
+    nums[19] = 10;
+}
+
+
+func selectionSort() void {
+    var i int;
+    var small_index int;
+    var j int;
+    var temp int;
+    for(i = 0; i < 19; i = i + 1){
+        small_index = i;
+        for(j = i + 1; j < 20; j = j + 1){
+            if(nums[j] < nums[small_index]){
+                small_index = j;
+            }
+        }
+        temp = nums[small_index];
+        nums[small_index] = nums[i];
+        nums[i] = temp;
+    }
+}
+
+
+ func printList(length int) void {
+    var i int;
+    for (i = 0; i < length; i = i + 1) {
+      print_int(nums[i]);
+      print_string(" ");
+    }
+    print_string("\n");
+  }
+
+
+
+
+  func main() int {
+    createList();
+    print_string("array before sorting: ");
+    printList(20);
+    selectionSort();
+
+    print_string("array after sorting: ");
+    printList(20);
+
+    print_string("\n");
+    return(0);
+  }
+}

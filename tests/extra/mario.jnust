@@ -1,0 +1,32 @@
+extern func print_string(string) void;
+
+package Mario {
+  func pyramid(h int) void {
+    var i, j int;
+    for (i = 1; i <= h; i = i + 1) {
+      for (j = i; j < h; j = j + 1) {
+        print_string(" ");
+      }
+      for (j = h - i; j < h; j = j + 1) {
+        print_string("#");
+      }
+
+      print_string(" ");
+
+      for (j = h - i; j < h; j = j + 1) {
+        print_string("#");
+      }
+
+      for (j = i; j < h; j = j + 1) {
+        print_string(" ");
+      }
+
+      print_string("\n");
+    }
+  }
+
+  func main() int {
+    pyramid(8);
+    return (0);
+  }
+}

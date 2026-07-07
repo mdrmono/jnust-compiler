@@ -1,0 +1,40 @@
+extern func print_string(string) void;
+extern func print_int(int) void;
+
+package StringLength {
+  var chars [13]int;
+
+  func createList() void {
+    chars[0] = 'h';
+    chars[1] = 'e';
+    chars[2] = 'l';
+    chars[3] = 'l';
+    chars[4] = 'o';
+    chars[5] = ' ';
+    chars[6] = 'w';
+    chars[7] = 'o';
+    chars[8] = 'r';
+    chars[9] = 'l';
+    chars[10] = 'd';
+    chars[11] = '!';
+    chars[12] = 0;
+  }
+
+  func calcLength() int {
+    var length int;
+    length = 0;
+    while(chars[length] != 0) {
+        length = length + 1;
+    }
+    return (length);
+  }
+
+
+  func main() int {
+    createList();
+    print_string("The string is of length: ");
+    print_int(calcLength());
+    print_string("\n");
+    return(0);
+    }
+}

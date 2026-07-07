@@ -1,0 +1,27 @@
+extern func print_int(int) void;
+extern func print_string(string) void;
+
+package Hailstone {
+    func hailstone(n int) void {
+        var current int;
+        current = n;
+
+        while (current != 1) {
+            print_int(current);
+            print_string(" ");
+
+            if (current % 2 == 0) {
+                current = current / 2;
+            } else {
+                current = current * 3 + 1;
+            }
+        }
+        print_int(1);
+        print_string("\n");
+    }
+
+    func main() int {
+        hailstone(7);
+        return (0);
+    }
+}

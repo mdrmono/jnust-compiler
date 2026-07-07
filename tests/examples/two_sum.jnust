@@ -1,0 +1,43 @@
+extern func print_int(int) void;
+extern func print_string(string) void;
+
+package TwoSum {
+
+  var nums [10] int;
+
+  func initList() void {
+    nums[0] = 2;
+    nums[1] = 7;
+    nums[2] = 11;
+    nums[3] = 15;
+    nums[4] = 3;
+    nums[5] = 6;
+    nums[6] = 8;
+    nums[7] = 4;
+    nums[8] = 9;
+    nums[9] = 5;
+  }
+
+  func twoSum(target int) void {
+    var i, j int;
+    for (i = 0; i < 10; i = i + 1) {
+      for (j = i + 1; j < 10; j = j + 1) {
+        if (nums[i] + nums[j] == target) {
+          print_int(nums[i]);
+          print_string(" ");
+          print_int(nums[j]);
+          print_string("\n");
+          return;
+        }
+      }
+    }
+  }
+
+  func main() int {
+    var tar int;
+    initList();
+    tar = 9;
+    twoSum(tar);
+    return (0);
+  }
+}

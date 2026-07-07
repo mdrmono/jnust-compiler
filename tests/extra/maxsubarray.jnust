@@ -1,0 +1,57 @@
+extern func print_string(string) void;
+extern func print_int(int) void;
+
+package MaxSubArray {
+  var nums [20]int;
+
+  func createList() void {
+    nums[0] = -4;
+    nums[1] = 6;
+    nums[2] = 3;
+    nums[3] = -1;
+    nums[4] = 1;
+    nums[5] = -10;
+    nums[6] = -8;
+    nums[7] = -3;
+    nums[8] = 3;
+    nums[9] = -3;
+    nums[10] = 1;
+    nums[11] = -10;
+    nums[12] = 5;
+    nums[13] = -9;
+    nums[14] = -9;
+    nums[15] = 2;
+    nums[16] = 5;
+    nums[17] = 9;
+    nums[18] = 1;
+    nums[19] = 10;
+}
+
+
+  func MaxSubSize() int {
+    var overall int;
+    var i int;
+    var current int;
+    var j int;
+    overall = nums[0];
+    for (i = 0; i < 20; i = i + 1){
+        current = 0;
+        for (j = i; j < 20; j = j + 1){
+            current = current + nums[j];
+            if(current > overall){
+                overall = current;
+            }
+        }
+    }
+    return(overall);
+  }
+
+  func main() int {
+    createList();
+    print_string("The max sub array sum is: ");
+    print_int(MaxSubSize());
+    print_string("\n");
+    return(0);
+
+  }
+}

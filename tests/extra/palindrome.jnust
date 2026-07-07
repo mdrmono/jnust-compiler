@@ -1,0 +1,39 @@
+extern func print_string(string) void;
+
+package PalindromeString {
+  var chars [7]int;
+
+  func initList() void {
+    chars[0] = 'r';
+    chars[1] = 'a';
+    chars[2] = 'c';
+    chars[3] = 'e';
+    chars[4] = 'c';
+    chars[5] = 'a';
+    chars[6] = 'r';
+  }
+
+  func isPalindrome(n int) bool {
+    var left, right int;
+    left = 0;
+    right = n - 1;
+    while (left < right) {
+      if (chars[left] != chars[right]) {
+        return (false);
+      }
+      left = left + 1;
+      right = right - 1;
+    }
+    return (true);
+  }
+
+  func main() int {
+    initList(7);
+    if (isPalindrome()) {
+      print_string("Yes\n");
+    } else {
+      print_string("No\n");
+    }
+    return (0);
+  }
+}

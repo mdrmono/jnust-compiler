@@ -1,0 +1,35 @@
+extern func print_string(string) void;
+extern func print_int(int) void;
+
+package FloorCeilingRoot {
+
+  func floorRoot(n int) int {
+    var x int;
+    x = 1;
+    while (x * x <= n) {
+        x = x + 1;
+    }
+    return (x - 1);
+  }
+
+  func ceilRoot(n int) int {
+    var x int;
+    x = floorRoot(n);
+    if (x * x == n) {
+        return (x);
+    }
+    return (x + 1);
+  }
+
+  func main() int {
+    var num int;
+    num = 13;
+    print_string("integer to find floor and ceiling sqrt of: ");
+    print_int(num);
+    print_string("\nfloor root of number: ");
+    print_int(floorRoot(num));
+    print_string("\nceiling root of number: ");
+    print_int(ceilRoot(num));
+    return (0);
+  }
+}
