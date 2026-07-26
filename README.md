@@ -1,6 +1,6 @@
-# Jnust Compiler
+# Decaf Compiler
 
-Standalone Jnust compiler source and test inputs.
+Standalone Decaf compiler source and test inputs.
 
 ## Layout
 
